@@ -14,8 +14,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DpP-Km-M7t" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HIs-zZ-m8f">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="HIs-zZ-m8f">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -88,6 +88,7 @@
                                     <outlet property="locationLabel" destination="Bg7-xp-u41" id="yD8-ak-M5a"/>
                                     <outlet property="nameLabel" destination="a1A-FS-67z" id="OOh-CD-RWO"/>
                                     <outlet property="typeLabel" destination="aZY-KR-pxR" id="mUP-xx-hJH"/>
+                                    <segue destination="pjd-tY-BrF" kind="show" identifier="showDetail" id="1Bt-6e-rsa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -96,7 +97,7 @@
                             <outlet property="delegate" destination="Ppa-kx-8lG" id="LYo-eM-6wD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Suicide Place" id="dgN-YQ-s9y">
+                    <navigationItem key="navigationItem" title="Suicide Place" largeTitleDisplayMode="never" id="dgN-YQ-s9y">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XAt-ra-NI3">
                             <connections>
                                 <segue destination="4DS-Pi-euS" kind="presentation" modalTransitionStyle="crossDissolve" id="wys-hY-yOT"/>
@@ -255,7 +256,7 @@
                             <outlet property="delegate" destination="pjd-tY-BrF" id="3he-m4-MgY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Place" id="CZg-iq-8Fz">
+                    <navigationItem key="navigationItem" title="New Place" largeTitleDisplayMode="always" id="CZg-iq-8Fz">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="sbd-ke-WJl">
                             <connections>
                                 <action selector="cancelAction:" destination="pjd-tY-BrF" id="Wiv-Iq-TaE"/>
@@ -278,7 +279,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xn-vx-5Pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FcK-Nm-5WP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2932" y="1047.5262368815593"/>
+            <point key="canvasLocation" x="2001" y="1048"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gmE-Go-7ZI">
@@ -296,10 +297,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZM-ne-75v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992.8" y="1047.5262368815593"/>
+            <point key="canvasLocation" x="2001" y="155"/>
         </scene>
     </scenes>
     <resources>
         <image name="suicide_booth" width="352" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Bt-6e-rsa"/>
+    </inferredMetricsTieBreakers>
 </document>
