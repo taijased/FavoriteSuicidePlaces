@@ -11,9 +11,8 @@ import UIKit
 class MainViewController: UITableViewController {
 
     
-    var placesName = ["Миллениум", "Двойка",
-                      "Физфак", "Лазурные небеса",
-                      "Трасса М7", "Чаша", "Корстон"]
+   
+    var places = Place.getPlaces()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +25,18 @@ class MainViewController: UITableViewController {
   
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return placesName.count
+        return places.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        cell.nameLabel.text = placesName[indexPath.row]
-        cell.imageOfPlace.image = UIImage(named: "suicide_booth")
+        cell.nameLabel.text = places[indexPath.row].name
+        cell.locationLabel.text = places[indexPath.row].location
+        cell.typeLabel.text = places[indexPath.row].type
+        cell.imageOfPlace.image = UIImage(named: places[indexPath.row].image)
+        
         cell.imageOfPlace.layer.cornerRadius = cell.frame.size.height / 10
         cell.imageOfPlace.clipsToBounds = true
 
@@ -56,4 +58,5 @@ class MainViewController: UITableViewController {
     }
     */
 
+    @IBAction func cancelAction(_segue: UIStoryboardSegue){}
 }
