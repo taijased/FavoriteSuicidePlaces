@@ -35,11 +35,17 @@ class MainViewController: UITableViewController {
 
         cell.textLabel?.text = placesName[indexPath.row]
         cell.imageView?.image = UIImage(named: "suicide_booth")
-        
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 10
+        cell.imageView?.clipsToBounds = true
 
         return cell
     }
- 
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
+    }
+    
     /*
     // MARK: - Navigation
 
