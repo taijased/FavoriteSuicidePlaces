@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26B2E47A251C931E35BF4976 /* Pods_FavoriteSuicidePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668F2180B051B3C2C5FB25B1 /* Pods_FavoriteSuicidePlaces.framework */; };
+		8A54764E2283250A000B683A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54764D2283250A000B683A /* StorageManager.swift */; };
 		8A8222C62282DE8600482271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8222C52282DE8600482271 /* AppDelegate.swift */; };
 		8A8222CB2282DE8600482271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8222C92282DE8600482271 /* Main.storyboard */; };
 		8A8222CD2282DE8600482271 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8222CC2282DE8600482271 /* Assets.xcassets */; };
@@ -18,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		420AEDBA80D96163A42819B8 /* Pods-FavoriteSuicidePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteSuicidePlaces.release.xcconfig"; path = "Target Support Files/Pods-FavoriteSuicidePlaces/Pods-FavoriteSuicidePlaces.release.xcconfig"; sourceTree = "<group>"; };
+		668F2180B051B3C2C5FB25B1 /* Pods_FavoriteSuicidePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FavoriteSuicidePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A54764D2283250A000B683A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8A8222C22282DE8600482271 /* FavoriteSuicidePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoriteSuicidePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8222C52282DE8600482271 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8222CA2282DE8600482271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		8A8222D92282ED8800482271 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		8A8222DB2282F78100482271 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		8A8222DD228304B100482271 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
+		EE137D15FEB1E49E84A0C102 /* Pods-FavoriteSuicidePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteSuicidePlaces.debug.xcconfig"; path = "Target Support Files/Pods-FavoriteSuicidePlaces/Pods-FavoriteSuicidePlaces.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B2E47A251C931E35BF4976 /* Pods_FavoriteSuicidePlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02439D7363F7D91510E11CB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE137D15FEB1E49E84A0C102 /* Pods-FavoriteSuicidePlaces.debug.xcconfig */,
+				420AEDBA80D96163A42819B8 /* Pods-FavoriteSuicidePlaces.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3371AFBABA552920431C45E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				668F2180B051B3C2C5FB25B1 /* Pods_FavoriteSuicidePlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8A8222B92282DE8600482271 = {
 			isa = PBXGroup;
 			children = (
 				8A8222C42282DE8600482271 /* FavoriteSuicidePlaces */,
 				8A8222C32282DE8600482271 /* Products */,
+				02439D7363F7D91510E11CB1 /* Pods */,
+				3371AFBABA552920431C45E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +90,7 @@
 				8A8222D72282DED400482271 /* MainViewController.swift */,
 				8A8222D92282ED8800482271 /* CustomTableViewCell.swift */,
 				8A8222DB2282F78100482271 /* PlaceModel.swift */,
+				8A54764D2283250A000B683A /* StorageManager.swift */,
 				8A8222DD228304B100482271 /* NewPlaceViewController.swift */,
 				8A8222C92282DE8600482271 /* Main.storyboard */,
 				8A8222CC2282DE8600482271 /* Assets.xcassets */,
@@ -80,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A8222D42282DE8600482271 /* Build configuration list for PBXNativeTarget "FavoriteSuicidePlaces" */;
 			buildPhases = (
+				22C2C9A0411E9AAA15D55604 /* [CP] Check Pods Manifest.lock */,
 				8A8222BE2282DE8600482271 /* Sources */,
 				8A8222BF2282DE8600482271 /* Frameworks */,
 				8A8222C02282DE8600482271 /* Resources */,
+				975E156C7635DC4BF321679A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,6 +168,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22C2C9A0411E9AAA15D55604 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FavoriteSuicidePlaces-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		975E156C7635DC4BF321679A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FavoriteSuicidePlaces/Pods-FavoriteSuicidePlaces-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FavoriteSuicidePlaces/Pods-FavoriteSuicidePlaces-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A8222BE2282DE8600482271 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -147,6 +225,7 @@
 				8A8222DA2282ED8800482271 /* CustomTableViewCell.swift in Sources */,
 				8A8222DC2282F78100482271 /* PlaceModel.swift in Sources */,
 				8A8222DE228304B100482271 /* NewPlaceViewController.swift in Sources */,
+				8A54764E2283250A000B683A /* StorageManager.swift in Sources */,
 				8A8222C62282DE8600482271 /* AppDelegate.swift in Sources */,
 				8A8222D82282DED400482271 /* MainViewController.swift in Sources */,
 			);
@@ -292,6 +371,7 @@
 		};
 		8A8222D52282DE8600482271 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE137D15FEB1E49E84A0C102 /* Pods-FavoriteSuicidePlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,6 +390,7 @@
 		};
 		8A8222D62282DE8600482271 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 420AEDBA80D96163A42819B8 /* Pods-FavoriteSuicidePlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

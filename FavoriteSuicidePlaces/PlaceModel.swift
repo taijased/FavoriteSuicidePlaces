@@ -6,18 +6,20 @@
 //  Copyright © 2019 Maxim Spiridonov. All rights reserved.
 //
 
-import UIKit
+import RealmSwift
 
-struct Place {
-    var name: String
-    var location: String?
-    var type: String?
-    var image: UIImage?
-    var placeImage: String?
-    static func getPlaces() -> [Place] {
-        
-        let place = [Place(name: "Миллениум", location: "Kazan", type: "Утопление", image: nil, placeImage: "suicide_booth")] 
-        
-        return place
+class Place: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
+    
+    convenience init(name: String, location: String?, type: String?, imageData: Data?) {
+        self.init()
+        self.name = name
+        self.location = location
+        self.type = type
+        self.imageData = imageData
     }
+   
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
 
-    var newPlace: Place?
+
     var imageIsChange = false
     
     @IBOutlet weak var placeImage: UIImageView!
@@ -33,7 +33,7 @@ class NewPlaceViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
-        
+
     }
     //    MARK: Table view delegate
     
@@ -71,6 +71,7 @@ class NewPlaceViewController: UITableViewController {
     }
     
     func saveNewPlace() {
+        
         var image: UIImage?
         
         if imageIsChange {
@@ -78,11 +79,15 @@ class NewPlaceViewController: UITableViewController {
         } else {
             image = #imageLiteral(resourceName: "suicide_booth")
         }
-        newPlace = Place(name: placeName.text!,
-                         location: placeLocation.text,
-                         type: placeType.text,
-                         image: image,
-                         placeImage: nil)
+        
+        let imageData = image?.pngData()
+        let newPlace = Place(name: placeName.text!,
+                             location: placeLocation.text,
+                             type: placeType.text,
+                             imageData: imageData)
+        
+        StorageManager.saveObject(newPlace)
+    
     }
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
