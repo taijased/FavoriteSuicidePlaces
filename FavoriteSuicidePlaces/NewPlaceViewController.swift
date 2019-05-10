@@ -10,7 +10,7 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
 
-    var currentPlace: Place?
+    var currentPlace: Place!
     var imageIsChange = false
     
     @IBOutlet weak var placeImage: UIImageView! {
@@ -32,11 +32,13 @@ class NewPlaceViewController: UITableViewController {
     @IBOutlet weak var placeType: UITextField!
     @IBOutlet weak var placeLocation: UITextField!
     
+    @IBOutlet var ratingControl: RaitingControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
         setupEditScreen()
     }
     //    MARK: Table view delegate
@@ -88,7 +90,7 @@ class NewPlaceViewController: UITableViewController {
         let newPlace = Place(name: placeName.text!,
                              location: placeLocation.text,
                              type: placeType.text,
-                             imageData: imageData)
+                             imageData: imageData, rating: Double(ratingControl.rating))
         
         if currentPlace != nil {
             try! realm.write {
@@ -96,6 +98,7 @@ class NewPlaceViewController: UITableViewController {
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
+                currentPlace?.rating = newPlace.rating
             }
         } else {
             StorageManager.saveObject(newPlace)
@@ -104,6 +107,8 @@ class NewPlaceViewController: UITableViewController {
     
     private func setupEditScreen() {
         if currentPlace != nil {
+            setupNavigationBar()
+            
             imageIsChange = true
             guard
                 let data = currentPlace?.imageData,
@@ -113,7 +118,8 @@ class NewPlaceViewController: UITableViewController {
             placeName.text = currentPlace?.name
             placeLocation.text = currentPlace?.location
             placeType.text = currentPlace?.type
-            setupNavigationBar()
+            ratingControl.rating = Int(currentPlace.rating)
+            
         }
     }
     
