@@ -391,13 +391,26 @@
                                     <action selector="closeVC:" destination="btN-T1-oRZ" eventType="touchUpInside" id="x71-C8-a9F"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pu0-D3-Zj5">
+                                <rect key="frame" x="305" y="753" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="9Mj-yd-ERw"/>
+                                    <constraint firstAttribute="height" constant="69" id="yJ1-wI-Uxc"/>
+                                </constraints>
+                                <state key="normal" image="userLocation"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="btN-T1-oRZ" eventType="touchUpInside" id="mcy-Hs-DGR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="cBz-qa-bMq" secondAttribute="bottom" id="1N1-uE-iPK"/>
                             <constraint firstItem="cBz-qa-bMq" firstAttribute="trailing" secondItem="hFO-Oy-rx9" secondAttribute="trailing" id="2VK-c9-IHN"/>
                             <constraint firstItem="cBz-qa-bMq" firstAttribute="leading" secondItem="hFO-Oy-rx9" secondAttribute="leading" id="7GH-pe-Y6s"/>
+                            <constraint firstItem="hFO-Oy-rx9" firstAttribute="trailing" secondItem="pu0-D3-Zj5" secondAttribute="trailing" constant="40" id="Dg5-iU-spj"/>
                             <constraint firstItem="hFO-Oy-rx9" firstAttribute="trailing" secondItem="PNE-eh-M0D" secondAttribute="trailing" constant="40" id="Fep-Y4-v6o"/>
+                            <constraint firstItem="pu0-D3-Zj5" firstAttribute="bottom" secondItem="hFO-Oy-rx9" secondAttribute="bottom" constant="-40" id="Wjz-4q-uqY"/>
                             <constraint firstItem="cBz-qa-bMq" firstAttribute="top" secondItem="CpD-E9-mLf" secondAttribute="top" id="r16-qU-o81"/>
                             <constraint firstItem="PNE-eh-M0D" firstAttribute="top" secondItem="hFO-Oy-rx9" secondAttribute="top" constant="40" id="t48-ll-IbQ"/>
                         </constraints>
@@ -437,6 +450,7 @@
         <image name="filledStar" width="50" height="50"/>
         <image name="map" width="69" height="69"/>
         <image name="suicide_booth" width="352" height="256"/>
+        <image name="userLocation" width="69" height="69"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Z2L-3x-pML"/>

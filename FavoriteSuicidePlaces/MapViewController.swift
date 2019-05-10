@@ -8,16 +8,25 @@
 
 import UIKit
 import MapKit
+import CoreLocation
+
+
+
 class MapViewController: UIViewController {
     
-    var place: Place!
+    var place = Place()
     let annatationIdentifier = "annatationIdentifier"
+    let locationManager = CLLocationManager()
+    let regionInMeter = 10_000.00
+    
 
     @IBOutlet var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         setupPlaceMark()
+        checkLocationServices()
     }
     
 
@@ -25,6 +34,12 @@ class MapViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func centerViewInUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeter, longitudinalMeters: regionInMeter)
+            mapView.setRegion(region, animated: true )
+        }
+    }
     private func setupPlaceMark() {
         guard let location = place.location else { return }
         
@@ -53,7 +68,57 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(title: "Location services are disabled", message: "Включи и геопозицию и не тупи!")
+            }
+        }
+    }
+    
+    private func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    private func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            break
+        case .denied:
+            // TODO: show AlertController
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(title: "Location services are denied", message: "Включи и геопозицию и не тупи!")
+            }
+            break
+            
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(title: "Location services are restricted", message: "Включи и геопозицию и не тупи!")
+            }
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            print("default")
+        }
 
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -77,5 +142,13 @@ extension MapViewController: MKMapViewDelegate {
         
         
         return annatationView
+    }
+}
+
+
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
     }
 }
