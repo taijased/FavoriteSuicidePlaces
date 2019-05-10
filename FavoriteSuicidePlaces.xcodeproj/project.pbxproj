@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26B2E47A251C931E35BF4976 /* Pods_FavoriteSuicidePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668F2180B051B3C2C5FB25B1 /* Pods_FavoriteSuicidePlaces.framework */; };
 		8A54764E2283250A000B683A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54764D2283250A000B683A /* StorageManager.swift */; };
+		8A547650228572B0000B683A /* RaitingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54764F228572B0000B683A /* RaitingControl.swift */; };
 		8A8222C62282DE8600482271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8222C52282DE8600482271 /* AppDelegate.swift */; };
 		8A8222CB2282DE8600482271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8222C92282DE8600482271 /* Main.storyboard */; };
 		8A8222CD2282DE8600482271 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8222CC2282DE8600482271 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		420AEDBA80D96163A42819B8 /* Pods-FavoriteSuicidePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteSuicidePlaces.release.xcconfig"; path = "Target Support Files/Pods-FavoriteSuicidePlaces/Pods-FavoriteSuicidePlaces.release.xcconfig"; sourceTree = "<group>"; };
 		668F2180B051B3C2C5FB25B1 /* Pods_FavoriteSuicidePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FavoriteSuicidePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A54764D2283250A000B683A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		8A54764F228572B0000B683A /* RaitingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingControl.swift; sourceTree = "<group>"; };
 		8A8222C22282DE8600482271 /* FavoriteSuicidePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoriteSuicidePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8222C52282DE8600482271 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8222CA2282DE8600482271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,10 +90,11 @@
 			children = (
 				8A8222C52282DE8600482271 /* AppDelegate.swift */,
 				8A8222D72282DED400482271 /* MainViewController.swift */,
-				8A8222D92282ED8800482271 /* CustomTableViewCell.swift */,
 				8A8222DB2282F78100482271 /* PlaceModel.swift */,
 				8A54764D2283250A000B683A /* StorageManager.swift */,
 				8A8222DD228304B100482271 /* NewPlaceViewController.swift */,
+				8A8222D92282ED8800482271 /* CustomTableViewCell.swift */,
+				8A54764F228572B0000B683A /* RaitingControl.swift */,
 				8A8222C92282DE8600482271 /* Main.storyboard */,
 				8A8222CC2282DE8600482271 /* Assets.xcassets */,
 				8A8222CE2282DE8600482271 /* LaunchScreen.storyboard */,
@@ -227,6 +230,7 @@
 				8A8222DE228304B100482271 /* NewPlaceViewController.swift in Sources */,
 				8A54764E2283250A000B683A /* StorageManager.swift in Sources */,
 				8A8222C62282DE8600482271 /* AppDelegate.swift in Sources */,
+				8A547650228572B0000B683A /* RaitingControl.swift in Sources */,
 				8A8222D82282DED400482271 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
