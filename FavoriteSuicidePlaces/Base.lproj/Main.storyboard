@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8zQ-Rm-hGa">
-                                <rect key="frame" x="0.0" y="117" width="414" height="745"/>
+                                <rect key="frame" x="0.0" y="117" width="414" height="779"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="nms-Kd-too" customClass="CustomTableViewCell" customModule="FavoriteSuicidePlaces">
@@ -119,7 +119,7 @@
                             <constraint firstItem="8zQ-Rm-hGa" firstAttribute="leading" secondItem="Zkq-1d-KYm" secondAttribute="leading" id="QaZ-uM-gkY"/>
                             <constraint firstItem="U05-Vh-Lxc" firstAttribute="trailing" secondItem="Zkq-1d-KYm" secondAttribute="trailing" id="gWD-s1-Kt7"/>
                             <constraint firstItem="8zQ-Rm-hGa" firstAttribute="top" secondItem="U05-Vh-Lxc" secondAttribute="bottom" constant="1" id="hn9-Hf-1pC"/>
-                            <constraint firstItem="8zQ-Rm-hGa" firstAttribute="bottom" secondItem="Zkq-1d-KYm" secondAttribute="bottom" id="jJh-95-6NA"/>
+                            <constraint firstItem="8zQ-Rm-hGa" firstAttribute="bottom" secondItem="bQ1-eL-oqL" secondAttribute="bottom" id="jJh-95-6NA"/>
                             <constraint firstItem="U05-Vh-Lxc" firstAttribute="top" secondItem="Zkq-1d-KYm" secondAttribute="top" id="sRD-3w-8gb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zkq-1d-KYm"/>
@@ -292,7 +292,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D6D-fr-7bb" customClass="RaitingControl" customModule="FavoriteSuicidePlaces" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D6D-fr-7bb" customClass="RaitingControl" customModule="FavoriteSuicidePlaces" customModuleProvider="target">
                                                     <rect key="frame" x="81" y="48" width="252" height="44"/>
                                                 </stackView>
                                             </subviews>

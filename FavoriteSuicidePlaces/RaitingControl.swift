@@ -10,6 +10,9 @@ import UIKit
 
 @IBDesignable class RaitingControl: UIStackView {
     
+    //    MARK: Properties
+    var raiting = 0
+    
     private var raitingButtons = [UIButton]()
     
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
@@ -24,7 +27,7 @@ import UIKit
     }
     
     
-    var raiting = 0
+    
 
     // MARK: Initialization
     
