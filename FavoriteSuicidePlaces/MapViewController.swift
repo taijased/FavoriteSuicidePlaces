@@ -18,14 +18,20 @@ class MapViewController: UIViewController {
     let annatationIdentifier = "annatationIdentifier"
     let locationManager = CLLocationManager()
     let regionInMeter = 10_000.00
+    var incomeSegueIdentifier = ""
     
 
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapPinImage: UIImageView!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var doneButton: UIButton!
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        setupPlaceMark()
+        setupMapView()
         checkLocationServices()
     }
     
@@ -35,12 +41,20 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func centerViewInUserLocation() {
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeter, longitudinalMeters: regionInMeter)
-            mapView.setRegion(region, animated: true )
+        showUserLocation()
+    }
+    
+    private func setupMapView() {
+        if incomeSegueIdentifier == "showPlace" {
+            setupPlaceMark()
+            mapPinImage.isHidden = true
+            addressLabel.isHidden = true
+            doneButton.isHidden = true
         }
     }
+    
     private func setupPlaceMark() {
+        
         guard let location = place.location else { return }
         
         let geocoder = CLGeocoder()
@@ -63,7 +77,7 @@ class MapViewController: UIViewController {
                 
                 self.mapView.showAnnotations([annotation], animated: true)
                 self.mapView.selectAnnotation(annotation, animated: true)
-                
+               
             }
         }
     }
@@ -88,9 +102,12 @@ class MapViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
+            if incomeSegueIdentifier == "getAddress" {
+                showUserLocation()
+            }
+            
             break
         case .denied:
-            // TODO: show AlertController
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.showAlert(title: "Location services are denied", message: "Включи и геопозицию и не тупи!")
             }
@@ -100,9 +117,6 @@ class MapViewController: UIViewController {
             locationManager.requestWhenInUseAuthorization()
             break
         case .restricted:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.showAlert(title: "Location services are restricted", message: "Включи и геопозицию и не тупи!")
-            }
             break
         case .authorizedAlways:
             break
@@ -110,6 +124,20 @@ class MapViewController: UIViewController {
             print("default")
         }
 
+    }
+    
+    private func showUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeter, longitudinalMeters: regionInMeter)
+            mapView.setRegion(region, animated: true )
+        }
+    }
+    
+    private func getCenterLocation(for mapView: MKMapView) -> CLLocation {
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
     }
     
     private func showAlert(title: String, message: String) {
