@@ -19,6 +19,7 @@
 		8A8222DC2282F78100482271 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8222DB2282F78100482271 /* PlaceModel.swift */; };
 		8A8222DE228304B100482271 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8222DD228304B100482271 /* NewPlaceViewController.swift */; };
 		8A8A1F3722859BD200FB213A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8A1F3622859BD200FB213A /* MapViewController.swift */; };
+		8AFED5272286D15F00C72DB9 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFED5262286D15F00C72DB9 /* MapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		8A8222DB2282F78100482271 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		8A8222DD228304B100482271 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		8A8A1F3622859BD200FB213A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8AFED5262286D15F00C72DB9 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		EE137D15FEB1E49E84A0C102 /* Pods-FavoriteSuicidePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteSuicidePlaces.debug.xcconfig"; path = "Target Support Files/Pods-FavoriteSuicidePlaces/Pods-FavoriteSuicidePlaces.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,20 +92,61 @@
 		8A8222C42282DE8600482271 /* FavoriteSuicidePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				8A8222C52282DE8600482271 /* AppDelegate.swift */,
-				8A8222D72282DED400482271 /* MainViewController.swift */,
-				8A8222DB2282F78100482271 /* PlaceModel.swift */,
-				8A54764D2283250A000B683A /* StorageManager.swift */,
-				8A8222DD228304B100482271 /* NewPlaceViewController.swift */,
-				8A8222D92282ED8800482271 /* CustomTableViewCell.swift */,
-				8A54764F228572B0000B683A /* RaitingControl.swift */,
-				8A8A1F3622859BD200FB213A /* MapViewController.swift */,
-				8A8222C92282DE8600482271 /* Main.storyboard */,
-				8A8222CC2282DE8600482271 /* Assets.xcassets */,
-				8A8222CE2282DE8600482271 /* LaunchScreen.storyboard */,
-				8A8222D12282DE8600482271 /* Info.plist */,
+				8AFED5282287737600C72DB9 /* ViewControllers */,
+				8AFED52A228773AF00C72DB9 /* Helpers */,
+				8AFED529228773A300C72DB9 /* Models */,
+				8AFED52B228773C700C72DB9 /* Support Files */,
+				8AFED52C228773E400C72DB9 /* IBuilder */,
 			);
 			path = FavoriteSuicidePlaces;
+			sourceTree = "<group>";
+		};
+		8AFED5282287737600C72DB9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A8222D72282DED400482271 /* MainViewController.swift */,
+				8A8222DD228304B100482271 /* NewPlaceViewController.swift */,
+				8A8A1F3622859BD200FB213A /* MapViewController.swift */,
+				8A8222D92282ED8800482271 /* CustomTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8AFED529228773A300C72DB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A8222DB2282F78100482271 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8AFED52A228773AF00C72DB9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8A54764D2283250A000B683A /* StorageManager.swift */,
+				8AFED5262286D15F00C72DB9 /* MapManager.swift */,
+				8A54764F228572B0000B683A /* RaitingControl.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8AFED52B228773C700C72DB9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A8222C52282DE8600482271 /* AppDelegate.swift */,
+				8A8222CC2282DE8600482271 /* Assets.xcassets */,
+				8A8222D12282DE8600482271 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		8AFED52C228773E400C72DB9 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				8A8222CE2282DE8600482271 /* LaunchScreen.storyboard */,
+				8A8222C92282DE8600482271 /* Main.storyboard */,
+			);
+			path = IBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +277,7 @@
 				8A8222DC2282F78100482271 /* PlaceModel.swift in Sources */,
 				8A8222DE228304B100482271 /* NewPlaceViewController.swift in Sources */,
 				8A54764E2283250A000B683A /* StorageManager.swift in Sources */,
+				8AFED5272286D15F00C72DB9 /* MapManager.swift in Sources */,
 				8A8222C62282DE8600482271 /* AppDelegate.swift in Sources */,
 				8A547650228572B0000B683A /* RaitingControl.swift in Sources */,
 				8A8222D82282DED400482271 /* MainViewController.swift in Sources */,
@@ -385,8 +429,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C8F3CLJ592;
-				INFOPLIST_FILE = FavoriteSuicidePlaces/Info.plist;
+				DEVELOPMENT_TEAM = 4226M9N553;
+				INFOPLIST_FILE = "$(SRCROOT)/FavoriteSuicidePlaces/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -404,8 +448,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C8F3CLJ592;
-				INFOPLIST_FILE = FavoriteSuicidePlaces/Info.plist;
+				DEVELOPMENT_TEAM = 4226M9N553;
+				INFOPLIST_FILE = "$(SRCROOT)/FavoriteSuicidePlaces/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
