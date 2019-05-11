@@ -403,17 +403,6 @@
                                     <action selector="closeVC:" destination="btN-T1-oRZ" eventType="touchUpInside" id="x71-C8-a9F"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pu0-D3-Zj5">
-                                <rect key="frame" x="305" y="753" width="69" height="69"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="9Mj-yd-ERw"/>
-                                    <constraint firstAttribute="height" constant="69" id="yJ1-wI-Uxc"/>
-                                </constraints>
-                                <state key="normal" image="userLocation"/>
-                                <connections>
-                                    <action selector="centerViewInUserLocation" destination="btN-T1-oRZ" eventType="touchUpInside" id="mcy-Hs-DGR"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userGeo" translatesAutoresizingMaskIntoConstraints="NO" id="b7y-0g-y9j">
                                 <rect key="frame" x="187" y="393" width="40" height="70"/>
                                 <constraints>
@@ -421,7 +410,7 @@
                                     <constraint firstAttribute="height" constant="70" id="MyN-87-7vJ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNU-Nv-ryN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNU-Nv-ryN">
                                 <rect key="frame" x="20" y="145" width="374" height="29"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.2137297094" green="0.39146918060000002" blue="0.54903972150000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -437,6 +426,28 @@
                                     <action selector="doneButtonPressed:" destination="btN-T1-oRZ" eventType="touchUpInside" id="zxm-nB-1Wt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpJ-3C-akU">
+                                <rect key="frame" x="20" y="753" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="LPI-LG-DuR"/>
+                                    <constraint firstAttribute="height" constant="69" id="rJu-WR-7bb"/>
+                                </constraints>
+                                <state key="normal" image="getDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="btN-T1-oRZ" eventType="touchUpInside" id="w1I-NZ-Sem"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pu0-D3-Zj5">
+                                <rect key="frame" x="325" y="753" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="9Mj-yd-ERw"/>
+                                    <constraint firstAttribute="height" constant="69" id="yJ1-wI-Uxc"/>
+                                </constraints>
+                                <state key="normal" image="userLocation"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="btN-T1-oRZ" eventType="touchUpInside" id="mcy-Hs-DGR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -444,7 +455,7 @@
                             <constraint firstItem="cBz-qa-bMq" firstAttribute="trailing" secondItem="hFO-Oy-rx9" secondAttribute="trailing" id="2VK-c9-IHN"/>
                             <constraint firstItem="2Kd-Wu-Z2u" firstAttribute="centerX" secondItem="CpD-E9-mLf" secondAttribute="centerX" id="3Md-ff-VEV"/>
                             <constraint firstItem="cBz-qa-bMq" firstAttribute="leading" secondItem="hFO-Oy-rx9" secondAttribute="leading" id="7GH-pe-Y6s"/>
-                            <constraint firstItem="hFO-Oy-rx9" firstAttribute="trailing" secondItem="pu0-D3-Zj5" secondAttribute="trailing" constant="40" id="Dg5-iU-spj"/>
+                            <constraint firstItem="hFO-Oy-rx9" firstAttribute="trailing" secondItem="pu0-D3-Zj5" secondAttribute="trailing" constant="20" id="Dg5-iU-spj"/>
                             <constraint firstItem="b7y-0g-y9j" firstAttribute="centerX" secondItem="CpD-E9-mLf" secondAttribute="centerX" id="E1O-RD-NK7"/>
                             <constraint firstItem="hFO-Oy-rx9" firstAttribute="trailing" secondItem="PNE-eh-M0D" secondAttribute="trailing" constant="40" id="Fep-Y4-v6o"/>
                             <constraint firstItem="YNU-Nv-ryN" firstAttribute="leading" secondItem="hFO-Oy-rx9" secondAttribute="leading" constant="20" id="Gxd-FA-ahG"/>
@@ -455,12 +466,15 @@
                             <constraint firstItem="cBz-qa-bMq" firstAttribute="top" secondItem="YNU-Nv-ryN" secondAttribute="bottom" constant="-174" id="oxQ-Wm-Qb2"/>
                             <constraint firstItem="cBz-qa-bMq" firstAttribute="top" secondItem="CpD-E9-mLf" secondAttribute="top" id="r16-qU-o81"/>
                             <constraint firstItem="PNE-eh-M0D" firstAttribute="top" secondItem="hFO-Oy-rx9" secondAttribute="top" constant="40" id="t48-ll-IbQ"/>
+                            <constraint firstItem="hFO-Oy-rx9" firstAttribute="bottom" secondItem="YpJ-3C-akU" secondAttribute="bottom" constant="40" id="tZd-iq-UCF"/>
+                            <constraint firstItem="YpJ-3C-akU" firstAttribute="leading" secondItem="hFO-Oy-rx9" secondAttribute="leading" constant="20" id="vaJ-af-9rp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hFO-Oy-rx9"/>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="YNU-Nv-ryN" id="Lgh-rC-OsC"/>
                         <outlet property="doneButton" destination="2Kd-Wu-Z2u" id="blt-gb-lML"/>
+                        <outlet property="goButton" destination="YpJ-3C-akU" id="J3k-zS-fYt"/>
                         <outlet property="mapPinImage" destination="b7y-0g-y9j" id="dpI-Pd-41o"/>
                         <outlet property="mapView" destination="cBz-qa-bMq" id="IGE-wS-awb"/>
                     </connections>
@@ -493,6 +507,7 @@
         <image name="close" width="25" height="25"/>
         <image name="emptyStar" width="50" height="50"/>
         <image name="filledStar" width="50" height="50"/>
+        <image name="getDirection" width="69" height="69"/>
         <image name="map" width="69" height="69"/>
         <image name="mapGeo" width="34" height="47.5"/>
         <image name="suicide_booth" width="352" height="256"/>
